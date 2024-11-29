@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload File - Handyman Service</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="gooselogo">
+            <img src="/static/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/reviews">REVIEWS</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+</header>
+
+
+<div class="background">
+    <img src="/static/images/background.jpg" alt="">
+</div>
+<form action="/upload_attachment/{{ job_id }}" method="post" enctype="multipart/form-data" id="upload-form">
+    <label class="file-upload-label">
+        <input type="file" name="file" accept="image/*,video/*" id="file-input" multiple>
+        <span class="custom-button">Upload Files</span>
+    </label>
+
+    <!-- Превью загруженных изображений -->
+    <div id="preview-container" class="preview-container"></div>
+
+    <!-- Кнопка "Skip and Go to Confirmation" -->
+    <a href="/confirmation" class="skip-button">Skip and Go to Confirmation</a>
+
+    <input type="submit" value="Submit" id="submit-button" disabled>
+</form>
+
+
+<footer>
+    <div class="footer-content">
+        <p id="phone-number">Phone number: <span class="copy-number"> +1 215 431 66 65</span></p>
+        <p>Email: HandyGoosellc@gmail.com | Instagram: <a href="https://www.instagram.com/handy.goose/profilecard/?igsh=MXgzcXdhNG0yNzhsbQ==" target="_blank">@handygoose</a></p>
+        <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+document.getElementById("file-input").addEventListener("change", function(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById("preview-container");
+
+    // Ограничение на количество изображений и видео
+    const imageCount = Array.from(files).filter(file => file.type.startsWith("image/")).length;
+    const videoCount = Array.from(files).filter(file => file.type.startsWith("video/")).length;
+    const submitButton = document.getElementById("submit-button");
+        if (files.length > 0) {
+        submitButton.removeAttribute("disabled");
+    } else {
+        submitButton.setAttribute("disabled", true);
+    }
+
+
+    if (imageCount > 5) {
+        alert("You can upload up to 5 images.");
+        return;
+    }
+
+    if (videoCount > 2) {
+        alert("You can upload up to 2 videos.");
+        return;
+    }
+
+    Array.from(files).forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const filePreview = document.createElement("div");
+            filePreview.classList.add("preview-item");
+
+            if (file.type.startsWith("image/")) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                filePreview.appendChild(img);
+            } else if (file.type.startsWith("video/")) {
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                filePreview.appendChild(video);
+            }
+
+            // Добавляем крестик для удаления файла
+            const deleteIcon = document.createElement("div");
+            deleteIcon.classList.add("delete-icon");
+            deleteIcon.innerHTML = "x";
+            deleteIcon.onclick = function() {
+                previewContainer.removeChild(filePreview);
+
+                const remainingFiles = previewContainer.querySelectorAll(".preview-item").length;
+                if (remainingFiles === 0) {
+                    submitButton.setAttribute("disabled", true);
+                }
+            };
+            filePreview.appendChild(deleteIcon);
+
+            previewContainer.appendChild(filePreview);
+        };
+
+        reader.readAsDataURL(file);
+    });
+});
+</script>
+
+
+
+
+
+</body>
+</html>

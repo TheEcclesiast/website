@@ -1,0 +1,131 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Handyman Service</title>
+        <link rel="stylesheet" href="/static/styles.css">
+          <link rel="shortcut icon" href="/static/logo.png" />
+
+    </head>
+    <body>
+
+    <header>
+
+        <div class="header">
+                        <div class="gooselogo">
+                <img src="/static/logo.png" alt="">
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/order">CONTACT</a></li>
+                    <li><a href="/reviews">REVIEWS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="paintroller">
+    <img id="svg-image-1" src="/static/images/paintroller.svg" alt="Paint Roller Icon">
+    </div>
+    <div class="faucet">
+    <img id="svg-image-2" src="/static/images/faucet.svg" alt="Faucet Icon">
+    </div>
+    <div class="house">
+        <img id="svg-image-3" src="/static/images/house.svg" alt="House Icon">
+    </div>
+    <div class="screwdriver">
+        <img id="svg-image-4" src="/static/images/screwdriver.svg" alt="Screwdriver Icon">
+    </div>
+        <div class="wrench">
+        <img id="svg-image-5" src="/static/images/wrench.svg" alt="Wrench Icon">
+        </div>
+
+
+
+
+        <div class="random-container">
+            <div class="custom-image-container" id="custom-image-1">
+                <img src="/static/images/fence_paint.jpg" alt="Custom Image 1">
+                <p class="image-description">PAINTING</p>
+
+            </div>
+            <div class="custom-image-container" id="custom-image-2">
+                <img src="/static/images/wall.jpg" alt="Custom Image 2">
+                <p class="image-description">WALLS</p>
+
+            </div>
+            <div class="custom-image-container" id="custom-image-3">
+                <img src="/static/images/garage.jpg" alt="Custom Image 3">
+                <p class="image-description">GARAGES</p>
+
+            </div>
+            <div class="custom-image-container" id="custom-image-4">
+                <img src="/static/images/mirror.jpg" alt="Custom Image 4">
+                <p class="image-description">MIRRORS</p>
+
+
+            </div>
+            <div class="custom-image-container" id="custom-image-5">
+                <img src="/static/images/veranda.jpg" alt="Custom Image 5">
+                <p class="image-description">VERANDAS</p>
+
+            </div>
+        </div>
+
+
+    <div>
+        <div class="background-index">
+            <img src="/static/images/background.jpg" alt="">
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <p id="phone-number">Phone number: <span class="copy-number"> +1 215 431 66 65</span></p>
+            <p>Email: HandyGoosellc@gmail.com | Instagram: <a href="https://www.instagram.com/handy.goose/profilecard/?igsh=MXgzcXdhNG0yNzhsbQ==" target="_blank">@handygoose</a></p>
+            <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="order-phone">
+        <h1>HANDYGOOSE</h1>
+        <button class="order-phone-button" onclick="window.location.href='/order'">ORDER SERVICE</button>
+    </div>
+
+    <div class="order-container">
+        <h1>HANDYGOOSE</h1>
+        <main>
+            <button class="order-button" onclick="window.location.href='/order'">ORDER SERVICE</button>
+        </main>
+
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("nav-active");
+            burger.classList.toggle("toggle");
+        });
+    });
+
+
+
+    </script>
+
+
+
+
+
+    </body>
+    </html>

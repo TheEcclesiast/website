@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmed</title>
+    <link rel="stylesheet" href="/static/styles.css">
+
+</head>
+
+<header>
+    <div class="header">
+                  <div class="gooselogo">
+            <img src="/static/logo.png" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/order">CONTACT</a></li>
+                <li><a href="/reviews">REVIEWS</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+</header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+    });
+});
+</script>
+
+    <div class="background">
+        <img src="/static/images/background.jpg" alt="">
+</div>
+
+<body class="confirmation-page">
+    <header class="confirmation-header">
+        <h1 class="confirmation-title">Request will be processed</h1>
+    </header>
+    <p class="confirmation-message">Your estimate has been submitted successfully</p>
+
+    <footer>
+    <div class="footer-content">
+        <p id="phone-number">Phone: <span class="copy-number">+1 215 431 66 65</span></p>
+        <p>Email: HandyGoosellc@gmail.com | Telegram: <a href="https://t.me/handygoose" target="_blank">@handygoose</a></p>
+        <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+    </div>
+    </footer>
+
+
+
+</body>
+</html>

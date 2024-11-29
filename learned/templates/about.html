@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handyman Service</title>
+    <link rel="stylesheet" href="/static/styles.css">
+
+</head>
+<body>
+<header>
+    <div class="header">
+                          <div class="gooselogo">
+            <img src="/static/logo.png" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/order">CONTACT</a></li>
+                <li><a href="/reviews">REVIEWS</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+</header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+    });
+});
+</script>
+<div class="phone-about">
+    <div class="photo-row">
+        <img src="static/images/fence.jpg" alt="Photo 1" class="photo-item">
+        <img src="static/images/garden_isolation.jpg" alt="Photo 2" class="photo-item">
+        <img src="static/images/elec_commun.jpg" alt="Photo 3" class="photo-item">
+    </div>
+    <div class="photo-row-second">
+        <img src="static/images/room.jpg" alt="" class="photo-item">
+        <img src="static/images/stoneroad.jpg" alt="" class="photo-item">
+        <img src="static/images/facade.jpg" alt="" class="photo-item">
+    </div>
+</div>
+    <div class="background">
+        <img src="/static/images/background.jpg" alt="">
+</div>
+
+<div id="slider-container" class="slider-overlay">
+    <button id="close-slider" class="slider-close-button">&times;</button>
+    <div id="slider-deck" class="slider-deck">
+        <!-- Картинки -->
+                    <img src="static/images/fence.jpg" class="slider-card">
+                    <img src="static/images/garden_isolation.jpg" class="slider-card">
+                    <img src="static/images/elec_commun.jpg" class="slider-card">
+                    <img src="static/images/doors.jpg" class="slider-card">
+                    <img src="static/images/window.jpg" class="slider-card">
+                    <img src="static/images/room.jpg" class="slider-card">
+                    <img src="static/images/stoneroad.jpg" class="slider-card">
+                    <img src="static/images/facade.jpg" class="slider-card">
+                    <img src="static/images/reinforce.jpg" class="slider-card">
+    </div>
+    <button id="prev-slide" class="slider-nav-button prev-button">&#10094;</button>
+    <button id="next-slide" class="slider-nav-button next-button">&#10095;</button>
+</div>
+
+<button id="open-slider" class="open-slider-button">Open Gallery</button>
+
+
+<div class="center-description">
+    <h2>Welcome to HANDYGOOSE!</h2>
+    <p>HandyGoose is a flock of experienced professionals from various fields united by one thing - a responsible approach to work. Home Repair Services: Our expert team provides comprehensive home repair services, tackling everything from minor fixes to major renovations. Contact us for all your home repair needs in Philadelphia!</p>
+    <h3>Tap on me!</h3>
+
+
+        <div class="phone-about-menu" id="phone-about-menu">
+
+            <div class="menuline1"></div>
+            <div class="menuline2"></div>
+            <div class="menuline3"></div>
+        </div>
+</div>
+<div class="gallery-overlay" id="gallery-overlay">
+            <div class="close-button" id="close-button">&times;</div>
+            <div class="gallery">
+                <button class="nav-button prev" id="prev">&#10094;</button>
+                <div class="gallery-images" id="gallery-images">
+                    <img src="static/images/fence.jpg" alt="">
+                    <img src="static/images/garden_isolation.jpg" alt="">
+                    <img src="static/images/elec_commun.jpg" alt="">
+                    <img src="static/images/doors.jpg" alt="">
+                    <img src="static/images/window.jpg" alt="">
+                    <img src="static/images/room.jpg" alt="">
+                    <img src="static/images/stoneroad.jpg" alt="">
+                    <img src="static/images/facade.jpg" alt="">
+                    <img src="static/images/reinforce.jpg" alt="">
+
+                </div>
+                <button class="nav-button next" id="next">&#10095;</button>
+            </div>
+        </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.getElementById('slider-container');
+    const openButton = document.getElementById('open-slider');
+    const closeButton = document.getElementById('close-slider');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    const sliderDeck = document.getElementById('slider-deck');
+    const cards = document.querySelectorAll('.slider-card');
+
+    let currentIndex = 0;
+
+    // Показ галереи
+    openButton.addEventListener('click', () => {
+        sliderContainer.style.display = 'block';
+        updateCards(); // Обновляем видимые позиции
+    });
+
+    // Закрытие галереи
+    closeButton.addEventListener('click', () => {
+        sliderContainer.style.display = 'none';
+    });
+
+    // Обновление положения и стилей карт
+    function updateCards() {
+        cards.forEach((card, index) => {
+            const offset = (index - currentIndex + cards.length) % cards.length;
+
+            if (offset === 0) {
+                // Верхняя карта
+                card.style.transform = `translateX(0) scale(1)`;
+                card.style.opacity = 1;
+                card.style.zIndex = 10;
+            } else if (offset === 1) {
+                // Следующая карта
+                card.style.transform = `translateX(40%) scale(0.9)`;
+                card.style.opacity = 0.7;
+                card.style.zIndex = 5;
+            } else if (offset === cards.length - 1) {
+                // Предыдущая карта
+                card.style.transform = `translateX(-40%) scale(0.9)`;
+                card.style.opacity = 0.7;
+                card.style.zIndex = 5;
+            } else {
+                // Остальные карты
+                card.style.transform = `translateX(100%) scale(0.8)`;
+                card.style.opacity = 0;
+                card.style.zIndex = -1;
+            }
+        });
+    }
+
+    // Переключение влево
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : cards.length - 1;
+        updateCards();
+    });
+
+    // Переключение вправо
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCards();
+    });
+
+    // Изначальная позиция
+    updateCards();
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const photos = document.querySelectorAll('.photo-item');
+
+    photos.forEach(photo => {
+        photo.addEventListener('click', function() {
+            // Если фото уже активно, то убираем все классы
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+                photos.forEach(p => p.classList.remove('dimmed'));
+            } else {
+                // Иначе устанавливаем active для текущего фото
+                photos.forEach(p => p.classList.remove('active', 'dimmed'));
+                this.classList.add('active');
+
+                // Добавляем dimmed для всех остальных фото
+                photos.forEach(p => {
+                    if (p !== this) {
+                        p.classList.add('dimmed');
+                    }
+                });
+            }
+        });
+    });
+});
+
+const phoneAboutMenu = document.getElementById('phone-about-menu');
+const galleryOverlay = document.getElementById('gallery-overlay');
+const closeButton = document.getElementById('close-button');
+const galleryImages = document.getElementById('gallery-images');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+let currentIndex = 0;
+
+// Переменные для отслеживания свайпов
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+phoneAboutMenu.addEventListener('click', () => {
+    phoneAboutMenu.classList.toggle('active');
+    galleryOverlay.classList.toggle('active');
+});
+
+closeButton.addEventListener('click', () => {
+    phoneAboutMenu.classList.remove('active');
+    galleryOverlay.classList.remove('active');
+});
+
+prevButton.addEventListener('click', showPreviousImage);
+nextButton.addEventListener('click', showNextImage);
+
+galleryImages.addEventListener('touchstart', handleTouchStart);
+galleryImages.addEventListener('touchmove', handleTouchMove);
+galleryImages.addEventListener('touchend', handleTouchEnd);
+
+function showPreviousImage() {
+    currentIndex = (currentIndex > 0)
+        ? currentIndex - 1
+        : galleryImages.children.length - 1;
+    updateGallery();
+}
+
+function showNextImage() {
+    currentIndex = (currentIndex < galleryImages.children.length - 1)
+        ? currentIndex + 1
+        : 0;
+    updateGallery();
+}
+
+function updateGallery() {
+    const offset = -currentIndex * galleryImages.children[0].offsetWidth;
+    galleryImages.style.transform = `translateX(${offset}px)`;
+}
+
+// Функции для свайпов
+function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+}
+
+function handleTouchMove(e) {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+
+    // Плавный предварительный сдвиг для визуальной обратной связи
+    const offset = -currentIndex * galleryImages.children[0].offsetWidth + deltaX;
+    galleryImages.style.transform = `translateX(${offset}px)`;
+}
+
+function handleTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    const deltaX = currentX - startX;
+
+    if (Math.abs(deltaX) > 50) { // Условие для смены изображения (50px порог для свайпа)
+        if (deltaX > 0) {
+            showPreviousImage();
+        } else {
+            showNextImage();
+        }
+    } else {
+        updateGallery(); // Возврат в исходное положение, если свайп слишком короткий
+    }
+}
+
+
+
+
+
+
+</script>
+
+
+
+<footer>
+    <div class="footer-content">
+        <p id="phone-number">Phone number: <span class="copy-number"> +1 215 431 66 65</span></p>
+        <p>Email: HandyGoosellc@gmail.com | Instagram: <a href="https://www.instagram.com/handy.goose/profilecard/?igsh=MXgzcXdhNG0yNzhsbQ==" target="_blank">@handygoose</a></p>
+        <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handyman Service</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+    <div class="header">
+                  <div class="gooselogo">
+            <img src="/static/logo.png" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/reviews">REVIEWS</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+</header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+    });
+});
+</script>
+
+
+<div class="contact-img">
+    <img src="static/images/contacts.png" alt="">
+</div>
+    <div class="background">
+        <img src="/static/images/background.jpg" alt="">
+</div>
+
+<form action="/submit_order" method="POST">
+    <div class="form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+    </div>
+    <div class="form">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" pattern="\d{10}" title="Phone number must be 10 digits" maxlength="10"><br><br>
+<div class="form">
+    <div class="form-group1">
+        <div>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" pattern="[A-Z]{2}" title="Enter a 2-letter state abbreviation" maxlength="2" required>
+        </div>
+        <div>
+            <label for="address">Street:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+    </div>
+</div>
+        <div class="form">
+    <div class="form-group2">
+        <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div>
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="ZIP code must be 5 digits" required maxlength="5">
+        </div>
+    </div>
+</div>
+
+    <div class="form">
+        <label for="job_description">Job Description:</label>
+        <input type="text" id="job_description" name="job_description" required><br><br>
+    </div>
+    <div class="form">
+        <button type="submit">Submit Request</button>
+    </div>
+
+
+</form>
+<footer>
+    <div class="footer-content">
+        <p id="phone-number">Phone number: <span class="copy-number"> +1 215 431 66 65</span></p>
+        <p>Email: HandyGoosellc@gmail.com | Instagram: <a href="https://www.instagram.com/handy.goose/profilecard/?igsh=MXgzcXdhNG0yNzhsbQ==" target="_blank">@handygoose</a></p>
+        <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

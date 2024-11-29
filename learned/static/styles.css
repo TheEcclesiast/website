@@ -1,0 +1,1550 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.order-container h1{
+
+    display: flex;
+    justify-content: center;
+    color:white;
+    background-color: #333333;
+}
+
+
+
+.order-container {
+    justify-content: center;
+    position: absolute;
+    width:240px;
+    height: auto;
+    top: 50%;
+    left:46.5%;
+}
+.order-container button{
+    text-decoration: none;
+    background-color:#F9A826;
+    color: #232327;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Добавляем плавный переход */
+    padding: 10px 15px; /* Добавляем отступы для улучшенной видимости */
+    border-radius: 5px; /* Скругляем углы */
+}
+.order-container button:hover{
+    color: white; /* Меняем цвет текста */
+    transform: scale(1.1); /* Лёгкое увеличение при наведении */
+    background-color: #333333; /* Лёгкое затемнение фона */
+   }
+
+
+
+.nav-links {
+    position:absolute;
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    font-size: 1rem;
+    justify-content:center;
+    right:42.7%;
+    top:35%;
+}
+
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+.nav-links: hover{
+     transform: scale(1.5);
+}
+
+
+.nav-links li a:hover {
+    color: #ff0;
+    transform: scale(1.5);
+}
+.phone-about-menu{
+    display: none;
+    position:absolute;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+
+}
+/* Стили для кнопки-бургера */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    padding: 20px 20px;
+    background-color: #333; /* Серый фон */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Шапка над остальными элементами */
+    height:100px;
+}
+
+
+
+.background-index{
+    display: flex;
+    width: 40%;
+    position: fixed;
+    z-index: -10;
+    top: -30%;
+    left:-10%;
+    filter: blur(1.1px);
+
+}
+.background{
+    display: flex;
+    width: 40%;
+    position: fixed;
+    z-index: -10;
+    top: -30%;
+    left:-10%;
+
+}
+
+
+/* Стили для логотипа */
+
+.gooselogo {
+    display:flex;
+    width:95px;
+    height:95px;
+    position:absolute;
+    top:0.7%;
+    left:32%;
+
+
+}
+
+
+body {
+    background-repeat: no-repeat;
+    background-size: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+
+
+/* Общий контейнер для основного контента */
+.container {
+    max-width: 1200px;
+    margin: 2px auto;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+}
+
+
+
+
+
+.status-message {
+    margin-top: 20%;
+    padding: 20px;
+    background-color: #001243;
+    border-radius: 8px;
+    color: white;
+    width: 50%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFD700; /* Жёлтая кнопка */
+    color: #001243;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #FFC107;
+}
+
+.order-button:hover {
+    background-color: #d18f20;
+    transform: scale(1.05);
+}
+
+
+
+button {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+
+footer {
+    background-color: #333; /* Едва заметная полоса */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5); /* Менее заметный текст */
+}
+
+
+
+.footer-content p {
+    margin: 2px -2;
+    text-align: center;
+}
+
+.footer-content a {
+    color: rgba(255, 255, 255, 0.7); /* Ссылка чуть заметнее, чем остальной текст */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: rgba(255, 255, 255, 0.9); /* При наведении ссылка становится ярче */
+    text-decoration: underline;
+}
+
+/* Стили для номера телефона, чтобы его можно было скопировать */
+.copy-number {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.copy-number:hover {
+    color: rgba(255, 255, 255, 0.7); /* При наведении номер станет заметнее */
+}
+
+
+.service-center {
+    font-size: 1.3rem;
+    position: relative;
+    left: 50%;
+    top: 20%;
+    width: 12%;
+    margin: 30px;
+    background-color: #011165;
+    padding: 20px;
+    border-radius: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+about-button {
+    width: 100%;
+    background-color: #2B2D30;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #f9a826;
+}
+
+
+
+/* Стили для текста над рамкой */
+/* Общий контейнер */
+.card-slider-container {
+    text-align: center;
+    margin-top: 20px;
+}
+/* Общий фон галереи */
+/* Общий фон галереи */
+.slider-overlay {
+    display: none; /* Скрыто до включения */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Затемнение */
+    z-index: 1000;
+}
+/* Кнопка закрытия */
+.slider-close-button {
+    position: absolute;
+    top: 20px;
+    width:200px;
+    right:0%;
+    font-size: 24px; /* Уменьшен размер */
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7); /* Менее выделяющийся */
+    cursor: pointer;
+    z-index: 1010;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Эффект при наведении */
+.slider-close-button:hover {
+    color: rgba(255, 255, 255, 1); /* Подсветка при наведении */
+    transform: scale(1.1); /* Лёгкое увеличение */
+}
+
+
+/* Колода карт */
+.slider-deck {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* Каждая карточка */
+.slider-card {
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Вертикальные кнопки навигации */
+.slider-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 310px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+    font-size: 24px;
+    color: black;
+}
+
+.prev-button {
+    left: 550px;
+}
+
+.next-button {
+    right: 550px;
+}
+
+/* Кнопка открытия */
+.open-slider-button {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+.open-slider-button:hover{
+    background-color:#2B2D30;
+}
+.background-image{
+    position: absolute;
+    width: 19.2%;
+    left:42.25%;
+    top: 14.5%;
+    z-index: -1;
+}
+.center-description h3{
+display:none;
+}
+.center-description {
+    position: absolute;
+    top: 100px;
+    left:41%;
+    height:70%;
+    text-align: center;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+
+    backdrop-filter: blur(6px);
+}
+.paintroller {
+    position:fixed;
+    display:flex;
+    top:22%;
+    left:14%;
+}
+.paintroller img{
+max-width:180px;
+}
+
+.screwdriver{
+    position:fixed;
+    display:flex;
+    top:18%;
+    left:60%;
+}
+
+
+.faucet{
+    position:fixed;
+    display:flex;
+    top:50%;
+    left:74%;
+}
+.wrench{
+    position:fixed;
+    display:flex;
+    top:65%;
+    left:35%;
+
+}
+
+.house{
+    position:fixed;
+    display:flex;
+    top:32%;
+    left:47.5%;
+}
+
+.house img{
+max-width:180px;
+}
+.wrench img{
+max-width:180px;
+}
+.faucet img{
+max-width:180px;
+}
+.screwdriver img{
+max-width:180px;
+}
+
+.center-description h2 {
+    font-size: 2.8rem;
+    color:black;
+    margin-bottom: 10px;
+}
+
+.center-description p {
+    font-size: 2.1rem;
+    color: #090909  ;
+
+}
+.center-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.center-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.random-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+.custom-image-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.custom-image-container img {
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.image-description {
+    font-size: 22px;
+    color: black;
+    position:absolute;
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    text-align: center;
+}
+
+/* Random positioning of the containers */
+#custom-image-1 {
+    top: 20%;
+    left: 30%;
+}
+
+#custom-image-2 {
+    top: 50%;
+    left: 10%;
+}
+
+#custom-image-3 {
+    top: 70%;
+    left: 60%;
+}
+
+#custom-image-4 {
+    top: 30%;
+    left: 70%;
+}
+
+#custom-image-5 {
+    top: 80%;
+    left: 20%;
+}
+
+
+
+/* Скрываем стандартный input file */
+#file-input {
+    display: none;
+}
+
+/* Кнопка для загрузки */
+.custom-button {
+    display: flex;
+    background-color: #4caf50; /* Привлекательный зелёный оттенок */
+    color: #fff; /* Белый текст */
+    font-size: 18px; /* Увеличенный текст */
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold; /* Жирный текст */
+    text-transform: capitalize; /* Текст с заглавной буквы */
+    padding: 14px 40px; /* Увеличенные отступы */
+    border: 2px solid #81c784; /* Яркая зелёная граница */
+    border-radius: 12px; /* Более сильное округление */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s ease; /* Плавные эффекты */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+    text-decoration: none; /* Удаление подчёркивания */
+    justify-content: center;
+
+}
+
+.custom-button:hover {
+    background-color: #66bb6a; /* Светлый зелёный оттенок */
+    color: #ffffff; /* Сохранение белого текста */
+    border-color: #a5d6a7; /* Светлая граница */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+    transform: scale(1.07); /* Чуть более заметное увеличение */
+}
+
+.custom-button:active {
+    background-color: #388e3c; /* Тёмный насыщенный зелёный */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+    transform: scale(0.96); /* Незначительное уменьшение */
+}
+
+/* Контейнер для превью */
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* Основной стиль формы */
+form {
+    display: flex;
+    position: absolute;
+    top: 12%;
+    flex-direction: column; /* Элементы располагаются в колонку */
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
+    padding: 30px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+
+/* Группировка State и Street */
+.form-group1,
+.form-group2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Разделяет элементы равномерно */
+    gap: 25px; /* Добавляет отступ между элементами */
+    padding: 10px;
+}
+
+/* Стиль для каждого блока с меткой и полем */
+.form-group1 div,
+.form-group2 div {
+    display: flex;
+    flex-direction: column; /* Располагает метку над полем ввода */
+    flex: 1; /* Заставляет блоки равномерно занимать пространство */
+    gap: 5px;
+}
+
+/* Общие стили для меток */
+.form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FFCC00;
+}
+#skip-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-button {
+    display: inline-block; /* Для точного позиционирования */
+    background-color: #4caf50; /* Приятный зелёный цвет */
+    color: #ffffff; /* Белый текст */
+    font-size: 18px; /* Удобный размер текста */
+    font-weight: bold; /* Жирный текст */
+    text-transform: uppercase; /* Заглавный текст */
+    text-align: center; /* Центрирование текста */
+    padding: 12px 24px; /* Внутренние отступы */
+    border: none; /* Убираем стандартную границу */
+    border-radius: 8px; /* Округлённые углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    width: auto; /* Пусть кнопка подстраивается под текст */
+}
+
+#submit-button:hover {
+    background-color: #45a049; /* Более тёмный зелёный при наведении */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+    transform: scale(1.05); /* Лёгкое увеличение */
+}
+
+#submit-button:active {
+    background-color: #388e3c; /* Насыщенный зелёный цвет */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+    transform: scale(0.98); /* Незначительное уменьшение */
+}
+
+#submit-button:disabled {
+    background-color: #9e9e9e; /* Серый цвет для отключённого состояния */
+    cursor: not-allowed; /* Указатель запрещён */
+    box-shadow: none; /* Без теней */
+    transform: none; /* Без анимаций */
+}
+
+.skip-button {
+    display: inline-block;
+    background-color: #f9a825; /* Привлекательный жёлтый оттенок */
+    color: #fff; /* Белый текст для контраста */
+    font-size: 18px; /* Увеличенный размер текста для читабельности */
+    font-weight: bold; /* Жирный текст для акцента */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    padding: 12px 30px; /* Пропорциональные отступы */
+    border: 2px solid #ffeb3b; /* Границы ярче для акцента */
+    border-radius: 8px; /* Округлённые углы */
+    cursor: pointer; /* Указатель на курсоре при наведении */
+    transition: all 0.3s ease; /* Гладкий переход для эффектов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень для объёма */
+    text-decoration: none;
+}
+
+.skip-button:hover {
+    background-color: #ffc107; /* Более светлый оттенок жёлтого */
+    color: #212121; /* Тёмный текст для контраста */
+    border-color: #ffcc00; /* Подсветка границы при наведении */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+    transform: scale(1.05); /* Небольшое увеличение размера */
+}
+
+.skip-button:active {
+    background-color: #ff9800; /* Насыщенный оранжевый при клике */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшение тени */
+    transform: scale(0.98); /* Лёгкое уменьшение при нажатии */
+}
+/* Общие стили для полей ввода */
+.form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #2F3A8C;
+    font-size: 1rem;
+}
+
+.form input:focus {
+    border-color: #003366; /* Цвет рамки при фокусе */
+}
+
+/* Кнопка отправки */
+button[type="submit"] {
+    background-color: #ffcc00; /* Ярко-желтый цвет */
+    color: #333; /* Темно-синий цвет текста */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    min-width: 100%;
+    justify-content: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffb300; /* Темнее желтый при наведении */
+}
+
+#preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.preview-item {
+    position: relative;
+    margin: 5px;
+}
+
+.preview-item img,
+.preview-item video {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover; /* Убираем растяжение */
+}
+
+.delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    line-height: 10px; /* Совпадает с высотой */
+    width: 20px; /* Ширина */
+    height: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.delete-icon:hover {
+    background-color: red;
+}
+
+
+.success-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+.home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #001f3f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+
+.confirmation-header {
+    background-color: #001243; /* Тёмно-синий фон */
+    color: #fff; /* Белый текст для контраста */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.confirmation-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Стили для сообщения */
+.confirmation-message,
+.confirmation-customer-id {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+/* Стили для ссылки */
+.confirmation-link {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #F9A826; /* Ярко-жёлтый для кнопки */
+    color: #001243; /* Тёмно-синий текст */
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.confirmation-block{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    font-size: 1.8rem;
+    gap: 22px;
+
+}
+
+
+/* Эффект наведения для ссылки */
+.confirmation-link:hover {
+    background-color: #FFC107;
+    transform: scale(1.05); /* Лёгкий зум при наведении */
+}
+.reviews-section {
+    position: fixed;
+    left: 8%;
+    top: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    gap:10px;
+    margin: 0 auto; /* Центрируем секцию */
+}
+
+/* Рамка для увеличенного изображения */
+.review-frame {
+    position: fixed;
+    top: 18%;
+    width: 340px;
+    left: 1000px;
+    height: 550px;
+    border: 2px groove #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.review-text {
+    position: absolute;
+    background-color: #333333;
+    font-size: 24px;
+    color: white;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.review-image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    object-fit: contain; /* Сохраняем соотношение сторон */
+}
+
+/* Контейнеры с изображениями отзывов */
+.reviews-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow: visible;
+    justify-content: center;
+}
+
+.reviews-container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow: visible;
+    justify-content: center;
+}
+.review-card img {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 8px;
+}
+
+.review-card img:hover {
+    transform: scale(1.05);
+}
+
+.review-card img:not(:hover) {
+    filter: brightness(70%);
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+
+.random-container{
+display:none;
+}
+
+.paintroller{
+display:none;
+}
+.screwdriver{
+display:none;
+}
+.house{
+display:none;
+}
+.faucet{
+display:none;
+}
+.wrench{
+display:none;
+}
+.open-slider-button{
+display:none;
+}
+.gooselogo {
+left:38%;
+}
+    .confirmation-title {
+        font-size: 1.8rem;
+    }
+
+    .confirmation-message,
+    .confirmation-customer-id {
+        font-size: 1rem;
+    }
+
+    .confirmation-link {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+.confirmation-message{
+    color: black;
+}
+
+/* Основной контейнер отзывов */
+
+    .aboutlist-container{
+    display: none;
+    }
+    .aboutlist-container-second{
+    display:none;
+    }
+
+    .photo-item{
+    display:none;
+    }
+    .center-description h2{
+    display: none;
+    }
+    .center-description p{
+    font-size: 1.8rem;
+    }
+    .center-description{
+    text-align: center;
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left:0%;
+    top:5%;
+    backdrop-filter: blur(9px);
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.4),   /* Основная тень справа снизу, глубокая */
+        2px 2px 4px rgba(0, 0, 0, 0.3),   /* Более широкая мягкая тень для эффекта глубины */
+        3px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .center-description h3{
+        display:block;
+        position: fixed;
+        bottom:0%;
+        left:37%;
+    }
+
+
+
+
+
+    .phone-about-menu {
+
+    position:absolute;
+    bottom:-5%;
+    left:47%;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.phone-about-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+
+.gallery-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-overlay.active {
+    display: flex;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.gallery {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-images img {
+    max-width: 100%;
+    margin: 0 0px;
+    border-radius: 10px;
+}
+
+.nav-button {
+    position: absolute;
+    bottom: -2%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+    border-radius: 0%;
+    width:22%;
+    height:12%;
+    justify-content: end;
+    text-align: center;
+}
+
+.nav-button.prev {
+    left: 10px;
+    justify-content: center;
+        text-align: center;
+}
+
+.nav-button.next {
+    right: 10px;
+    justify-content: center;
+        text-align: center;
+}
+
+
+
+
+    .review-frame{
+        display:none;
+    }
+    .reviews-section{
+        display:none;
+    }
+    reviews-container{
+        display: none;
+    }
+    /* Общие стили для шапки и логотипа */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo-container {
+        display: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* Стили для изображения на главной странице */
+    .index-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Адаптивные стили для отзывов */
+    .reviews-container, .reviews-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .review-card {
+        flex: 1 1 100px;
+        max-width: 45%;
+        margin-bottom: 10px;
+    }
+
+    /* Стили для футера */
+    .footer-content {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Стили для кнопки заказа */
+
+
+
+.phone-about {
+    display: none;
+}
+
+    /* Стили для шапки */
+    body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+
+/* Изображение на главной странице */
+.index-img img {
+  width: 0%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Стили для заднего фона */
+.background  {
+  width: 0%
+  height: 200%;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+/* Блок с отзывами */
+.review-frame {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  width: 0%;
+  height:0%;
+}
+
+.review-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.review-image {
+  max-width: 10%;
+  height: auto;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  gap: 10px;
+}
+
+.reviews-container,
+.reviews-container2 {
+  display: flex;
+  gap: 5px;
+  overflow-x: scroll;
+}
+
+.review-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.review-card img:hover {
+  transform: scale(1.2);
+}
+
+/* Футер */
+footer {
+  background-color: #333;
+  color: #333;
+  padding: 2px;
+  text-align: center;
+
+  gap:20px;
+}
+
+.footer-content{
+    font-size: 14px;
+}
+
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Блок с заказом услуги */
+
+
+.order-button:hover {
+    background-color: #005bb5;
+}
+
+    .phone-about {
+        display: block; /* Показываем phone-about */
+    }
+
+    .photo-row {
+        width:75%;
+        position: fixed;
+        top: 49%;
+        left: 12%;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    .photo-row-second{
+        width:75%;
+        position: fixed;
+        top: 66.5%;
+        left: 12%;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .photo-item {
+        flex: 1;
+        transition: transform 0.3s, filter 0.3s;
+        cursor: pointer;
+    }
+
+    /* Эффект увеличения и затемнения при нажатии */
+    .photo-item:active {
+        transform: scale(1.4); /* Увеличиваем фото */
+    }
+
+    .photo-item:not(:active) {
+        filter: brightness(50%); /* Затемняем остальные фото */
+    }
+
+
+.background-image{
+display: none;
+
+}
+.photo-item {
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+
+}
+
+.photo-item.active {
+    transform: scale(1.2); /* Увеличиваем активное фото */
+    filter: brightness(100%);
+
+}
+
+.photo-item.dimmed {
+    filter: brightness(50%); /* Затемняем остальные фото */
+    transform: scale(0.8);
+}
+.background {
+    width:10%;
+}
+
+
+.order-button {
+    display: none;
+
+}
+
+.order-container{
+
+    display:none;
+}
+
+body{
+    background-color: #4D4E51;
+}
+
+
+ .slider img:not(img:first-child) {
+    display: none;
+ }
+.slider img{
+    display: flex;
+    width:90%;
+}
+
+.banner{
+position:absolute;
+top: 12.5%;
+left: 19%;
+max-width: 70%
+}
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Ширина контейнера */
+}
+
+button {
+    position: relative;
+    display: flex;
+    width:30%;
+    justify-content: space-between;
+    background-color: #333333;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#next {
+    /* Дополнительные стили для кнопки "next", если нужно */
+}
+
+#prev {
+    /* Дополнительные стили для кнопки "prev", если нужно */
+}
+
+
+
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute; /* Фиксируем меню поверх страницы */
+        width: 110px;
+        height: 40vh;
+        background-color: rgba(51, 51, 51, 0.85);
+        top: 0%;
+        right: -11px;
+        align-items: start;
+        justify-content: center;
+        z-index: 20;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .burger {
+        display: flex;
+        position: absolute;
+        right: 40px;
+        top: 10px;
+        z-index: 25;
+    }
+
+    .nav-active {
+        display: flex;
+
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+.phone-about-menu{
+display:flex;
+position:absolute;
+bottom: 20%;
+}
+
+    .phone-about-menu.toggle .menuline1{
+    transform: rotate(-45deg) translate(-5px, -5px);
+}
+
+.phone-about-menu.toggle .menuline2{
+    opacity: 0;
+}
+
+.phone-about-menu.toggle .menuline3{
+
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+
+
+
+    .order-phone{
+        width:40%;
+        color: white;
+        background-color: #333;
+        position:fixed;
+        top: 45%;
+        left:20%;
+
+}
+    .order-phone h1{
+        display:none;
+        position: absolute;
+        top: 100%;
+        background-color: #333333;
+        justify-content: center;
+        width:230px;
+    }
+
+    .order-phone-button{
+        background-color: gray;
+        justify-content: center;
+        width:230px;
+    }
+
+    .order-phone-button: hover{
+    transform: scale(1.2);
+    }
+}
+@media (min-width: 769px) {
+.order-phone{
+    display: none;
+   }
+   .banner{
+    display: none;
+}
+.phone-about{
+display:none;
+}
+
+.confirmation-message{
+color: white;
+background-color: #333;
+font-size:2.1rem;
+justify-content: center;
+text-align: center;
+position: absolute;
+top: 40%;
+}
+.gallery{
+    display:none;
+}
+
+}
+
+

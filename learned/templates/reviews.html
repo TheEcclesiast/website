@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handyman Service</title>
+    <link rel="stylesheet" href="/static/styles.css">
+
+</head>
+<body>
+
+<header>
+    <div class="header">
+        <div class="gooselogo">
+            <img src="/static/logo.png" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/order">CONTACT</a></li>
+                <li><a href="/">HOME</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+</header>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+    });
+});
+</script>
+
+
+<div>
+    <div class="background">
+        <img src="/static/images/background.jpg" alt="">
+</div>
+
+    <div class="review-frame">
+        <div class="review-text">Look at our customer's reviews</div>
+        <img src="/static/images/review_(11).jpg" alt="Preview" class="review-image">
+    </div>
+
+<div class="reviews-section">
+    <div class="reviews-container">
+         <div class="review-card"><img src="/static/images/review_(4).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(5).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(2).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(3).jpg" alt=""></div>
+    </div>
+    <div class="reviews-container2">
+         <div class="review-card"><img src="/static/images/review_(10).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(7).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(9).jpg" alt=""></div>
+         <div class="review-card"><img src="/static/images/review_(6).jpg" alt=""></div>
+    </div>
+</div>
+
+
+    <div class="banner">
+        <div class="slider">
+            <img src="/static/images/review_(2).jpg" alt="">
+            <img src="/static/images/review_(3).jpg" alt="">
+            <img src="/static/images/review_(4).jpg" alt="">
+            <img src="/static/images/review_(5).jpg" alt="">
+            <img src="/static/images/review_(6).jpg" alt="">
+            <img src="/static/images/review_(7).jpg" alt="">
+
+            <img src="/static/images/review_(9).jpg" alt="">
+            <img src="/static/images/review_(10).jpg" alt="">
+        </div>
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <p id="phone-number">Phone number: <span class="copy-number"> +1 215 431 66 65</span></p>
+        <p>Email: HandyGoosellc@gmail.com | Instagram: <a href="https://www.instagram.com/handy.goose/profilecard/?igsh=MXgzcXdhNG0yNzhsbQ==" target="_blank">@handygoose</a></p>
+        <p>&copy; 2024 HandyGoose. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+</body>
+
+
+<script>
+    const reviewImages = document.querySelectorAll('.review-card img');
+    const reviewFrame = document.querySelector('.review-frame');
+    const reviewImage = document.querySelector('.review-image');
+    const reviewText = document.querySelector('.review-text');
+
+    let isFixed = false; // Переменная для отслеживания фиксации изображения
+
+    reviewImages.forEach(img => {
+        img.addEventListener('mouseover', () => {
+            // Если изображение не зафиксировано, обновляем его при наведении
+            if (!isFixed) {
+                reviewImage.src = img.src;
+                reviewImage.style.opacity = '1';
+                reviewText.style.opacity = '0';
+            }
+        });
+
+        img.addEventListener('mouseout', () => {
+            // Если изображение не зафиксировано, возвращаем текст при уходе мыши
+            if (!isFixed) {
+                reviewImage.style.opacity = '0';
+                reviewText.style.opacity = '1';
+            }
+        });
+
+        img.addEventListener('click', () => {
+            // При клике переключаем состояние фиксации
+            if (isFixed && reviewImage.src === img.src) {
+                // Если изображение уже зафиксировано и кликнули на то же самое, снимаем фиксацию
+                isFixed = false;
+                reviewImage.style.opacity = '0';
+                reviewText.style.opacity = '1';
+            } else {
+                // Иначе фиксируем текущее изображение
+                isFixed = true;
+                reviewImage.src = img.src;
+                reviewImage.style.opacity = '1';
+                reviewText.style.opacity = '0';
+            }
+        });
+    });
+
+
+    let slider = document.querySelector('.slider');
+    let nextBtn = document.getElementById('next');
+    let prevBtn = document.getElementById('prev');
+
+    nextBtn.onclick =() =>{
+        slider.append(slider.querySelector('img:first-child'));
+}
+
+    prevBtn.onclick =() =>{
+        slider.prepend(slider.querySelector('img:last-child'));
+    }
+</script>
+
+
+</html>
